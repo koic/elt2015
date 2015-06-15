@@ -1,0 +1,13 @@
+%h2 新規登録画面
+
+= form_for @exhibit do |f|
+  = f.label :title
+  = f.text_field :title
+
+  = f.label :description
+  = f.text_area :description
+  
+  = f.label :type
+  = f.select :type, @exhibits
+  
+  = f.submit
