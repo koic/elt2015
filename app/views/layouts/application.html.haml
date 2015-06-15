@@ -1,5 +1,5 @@
 !!! 5
-%html{ :lang => "en"}
+%html{ :lang => "ja"}
   %head
     %meta{ :charset => "utf-8" }
 
@@ -13,6 +13,8 @@
     = csrf_meta_tag
 
   %body
-
+    - flash.each do |key, message|
+      .alert-box(data-alert class=key)
+        = message
+        %a.close(href='#') &times;
     = yield
-
