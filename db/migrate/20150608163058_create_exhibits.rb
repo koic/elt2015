@@ -1,7 +1,7 @@
 class CreateExhibits < ActiveRecord::Migration
   def change
     create_table :exhibits do |t|
-      t.string :title
+      t.string :title, null: false
       t.text :description
       t.string :type
       t.references :user, index: true, foreign_key: true

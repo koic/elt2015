@@ -1,4 +1,9 @@
 %h2 新規登録画面
+- if @exhibit.errors.present?
+  - @exhibit.errors.full_messages.each do |message|
+    .alert-box.alert(data-alert)
+      = message
+      %a.close(href='#') &times;
 
 = form_for @exhibit do |f|
   = f.label :title

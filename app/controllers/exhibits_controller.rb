@@ -1,9 +1,10 @@
 class ExhibitsController < ApplicationController
+  # FIXME create で必要なのは、save が失敗したときだけ（new に戻るときだけ）なんだけど、
+  #       before_action で書いておいていいものなのか。。
+  before_action :set_exhibits, only: %i(new create)
+
   def new
     @exhibit = Exhibit.new
-    # これってこう書かないとだめなんかなあ
-    Dir.glob(File.join(Rails.root, "app", "models", "**", "*.rb")).each {|f| require f}
-    @exhibits = Exhibit.subclasses.map(&:to_s)
   end
 
   def create
@@ -29,5 +30,10 @@ class ExhibitsController < ApplicationController
 
   def exhibit_class
     params[:exhibit][:type].constantize
+  end
+
+  def set_exhibits
+    Dir.glob(File.join(Rails.root, "app", "models", "**", "*.rb")).each {|f| require f}
+    @exhibits = Exhibit.subclasses.map(&:to_s)
   end
 end
