@@ -20,7 +20,6 @@ group :development do
   gem 'pry-byebug'
 
   group :test do
-    gem 'pry-nav'
     gem 'pry-rails'
     gem 'quiet_assets'
     gem 'rspec-rails'
