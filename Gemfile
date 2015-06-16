@@ -15,7 +15,7 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development do
   group :test do
-    gem 'byebug'
+    gem 'pry-byebug'
     gem 'pry-nav'
     gem 'pry-rails'
     gem 'quiet_assets'
