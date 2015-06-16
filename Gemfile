@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.2'
+
 gem 'rails', '4.2.1'
 gem 'action_args'
 gem 'coffee-rails', '~> 4.1.0'
@@ -14,8 +16,9 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
 group :development do
+  gem 'pry-byebug'
+
   group :test do
-    gem 'pry-byebug'
     gem 'pry-nav'
     gem 'pry-rails'
     gem 'quiet_assets'
