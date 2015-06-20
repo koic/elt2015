@@ -8,7 +8,7 @@ class ExhibitsController < ApplicationController
   end
 
   def create
-    @exhibit = exhibit_class.new(exhibit_params)
+    @exhibit = Exhibit.new(exhibit_params)
 
     if @exhibit.save
       @exhibit = @exhibit.becomes(Exhibit)
@@ -27,11 +27,6 @@ class ExhibitsController < ApplicationController
   def exhibit_params
     params.require(:exhibit).permit(:title, :description, :type)
   end
-
-  def exhibit_class
-    params[:exhibit][:type].constantize
-  end
-
   def set_exhibits
     Dir.glob(File.join(Rails.root, "app", "models", "**", "*.rb")).each {|f| require f}
     @exhibits = Exhibit.subclasses.map(&:to_s)
