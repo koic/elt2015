@@ -1,0 +1,11 @@
+ja:
+  helpers:
+    submit:
+      exhibit:
+        create: 登録する
+  activerecord:
+    attributes:
+      exhibit:
+        title: タイトル
+        description: 説明
+        type: 種類
