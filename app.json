@@ -1,0 +1,8 @@
+{
+  "name":"apuri",
+  "scripts":{},
+  "env":{},
+  "addons":[
+    "heroku-postgresql"
+  ]
+}
