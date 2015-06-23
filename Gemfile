@@ -22,6 +22,7 @@ group :development do
   gem 'pry-byebug'
 
   group :test do
+    gem 'figaro'
     gem 'pry-rails'
     gem 'quiet_assets'
     gem 'rspec-rails'
