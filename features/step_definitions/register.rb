@@ -17,7 +17,3 @@ end
 もし(/^登録ボタンを押す$/) do
   click_on '登録する'
 end
-
-ならば(/^"(.*?)" と表示されていること$/) do |message|
-  expect(page).to have_css '.alert-box', text: message
-end
