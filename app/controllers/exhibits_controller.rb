@@ -1,4 +1,8 @@
 class ExhibitsController < ApplicationController
+  def index
+    @exhibits = Exhibit.all
+  end
+
   def new
     @exhibits = Exhibit.subclasses.map(&:to_s)
     @exhibit  = Exhibit.new

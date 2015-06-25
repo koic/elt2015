@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get 'signin' =>  'user_sessions#new'
   delete 'signout' => 'user_sessions#destroy'
 
-  resources :exhibits, only: %i(new create show)
+  resources :exhibits, only: %i(new create show index)
 end
