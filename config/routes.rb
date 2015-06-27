@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   delete 'signout' => 'user_sessions#destroy'
 
   resources :exhibits, only: %i(new create show index)
+
+  namespace :my do
+    resources :exhibits, only: %i(index)
+  end
 end
