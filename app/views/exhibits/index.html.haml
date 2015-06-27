@@ -1,17 +1,19 @@
 %h2 出品物一覧
 
-%table
-  %thead
-    %tr
-      %th タイトル
-      %th 出品者
-      %th 説明
-  %tbody
-    - @exhibits.each do |exhibit|
-      %tr
-        %td
-          = exhibit.title
-        %td
-          = exhibit.user.nickname
-        %td
-          = exhibit.description
+%ul.tabs(data-tab)
+  %li.tab-title.active
+    = link_to 'LT', '#lts'
+  %li.tab-title
+    = link_to '食べ物', '#foods'
+  %li.tab-title
+    = link_to 'お酒', '#sakes'
+
+.tabs-content
+  .content.active#lts
+    = render partial: 'exhibits_table', locals: {exhibits: @lts}
+
+  .content#foods
+    = render partial: 'exhibits_table', locals: {exhibits: @foods}
+
+  .content#sakes
+    = render partial: 'exhibits_table', locals: {exhibits: @sakes}

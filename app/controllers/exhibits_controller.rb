@@ -1,6 +1,8 @@
 class ExhibitsController < ApplicationController
   def index
-    @exhibits = Exhibit.all
+    @lts   = LightningTalk.all
+    @foods = Food.all
+    @sakes = Sake.all
   end
 
   def new
