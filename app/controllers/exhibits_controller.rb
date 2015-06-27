@@ -1,4 +1,6 @@
 class ExhibitsController < ApplicationController
+  permits :title, :description, :type
+
   def index
     @lts   = LightningTalk.all
     @foods = Food.all
@@ -10,8 +12,8 @@ class ExhibitsController < ApplicationController
     @exhibit  = Exhibit.new
   end
 
-  def create
-    @exhibit = Exhibit.new(exhibit_params)
+  def create(exhibit)
+    @exhibit = Exhibit.new(exhibit.merge(user: current_user))
 
     if @exhibit.save
       @exhibit = @exhibit.becomes(Exhibit)
@@ -24,11 +26,5 @@ class ExhibitsController < ApplicationController
 
   def show(id)
     @exhibit = Exhibit.find(id)
-  end
-
-  private
-
-  def exhibit_params
-    params.require(:exhibit).permit(:title, :description, :type)
   end
 end
