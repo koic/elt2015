@@ -1,0 +1,30 @@
+dassai_spark:
+  title: 獺祭スパークリング
+  description: 美味しい上に珍しいお酒。今飲まないと次はないかも！？
+  type: Sake
+  user_id: 1
+wine:
+  title: カベルネ・ソーヴィニヨン
+  description: まあふつうのワインです。
+  type: Sake
+  user_id: 2
+nikujaga:
+  title: 肉じゃが
+  description: 手間ひまかけてつくりました。
+  type: Food
+  user_id: 1
+pudding:
+  title: カスタードプリン
+  description: 蒸すのがすごく大変だったので投票してください。
+  type: Food
+  user_id: 2
+nice_gem:
+  title: ナイスな gem 10 選
+  description: 自分的ナイスな gem を 10 個厳選しました。
+  type: LightningTalk
+  user_id: 1
+ruby_love:
+  title: tokyu の中心で Ruby 愛をさけぶ
+  description: 叫びます。
+  type: LightningTalk
+  user_id: 2

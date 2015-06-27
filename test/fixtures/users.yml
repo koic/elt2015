@@ -1,0 +1,10 @@
+watson:
+  id: 1
+  nickname: watson
+  uid: 987654
+  provider: twitter
+molly:
+  id: 2
+  nickname: molly
+  uid: 111111
+  provider: github
