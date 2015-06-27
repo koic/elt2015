@@ -9,13 +9,13 @@
     = link_to 'お酒', '#sakes'
 
 .tabs-content
-  .content.active#lts
+  .lts__table.content.active#lts
     = render partial: '/exhibits/exhibits_table', locals: {exhibits: @lts}
 
-  .content#foods
+  .foods__table.content#foods
     = render partial: '/exhibits/exhibits_table', locals: {exhibits: @foods}
 
-  .content#sakes
+  .sakes__table.content#sakes
     = render partial: '/exhibits/exhibits_table', locals: {exhibits: @sakes}
 
 = link_to 'トップにもどる', root_path
