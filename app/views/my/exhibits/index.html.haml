@@ -1,0 +1,21 @@
+%h2 あなたの出品物一覧
+
+%ul.tabs(data-tab)
+  %li.tab-title.active
+    = link_to 'LT', '#lts'
+  %li.tab-title
+    = link_to '食べ物', '#foods'
+  %li.tab-title
+    = link_to 'お酒', '#sakes'
+
+.tabs-content
+  .lts__table.content.active#lts
+    = render partial: '/exhibits/exhibits_table', locals: {exhibits: @lts}
+
+  .foods__table.content#foods
+    = render partial: '/exhibits/exhibits_table', locals: {exhibits: @foods}
+
+  .sakes__table.content#sakes
+    = render partial: '/exhibits/exhibits_table', locals: {exhibits: @sakes}
+
+= link_to 'トップにもどる', root_path

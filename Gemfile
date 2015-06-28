@@ -22,6 +22,7 @@ group :development do
   gem 'pry-byebug'
 
   group :test do
+    gem 'factory_girl_rails'
     gem 'figaro'
     gem 'pry-rails'
     gem 'quiet_assets'
@@ -32,6 +33,8 @@ group :development do
 end
 
 group :test do
+  gem 'capybara'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
+  gem 'launchy'
 end

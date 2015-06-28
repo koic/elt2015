@@ -1,15 +1,18 @@
 %table
-  %thead
-    %tr
-      %th タイトル
-      %th 出品者
-      %th 説明
-  %tbody
-    - exhibits.each do |exhibit|
+  - if exhibits.any?
+    %thead
       %tr
-        %td
-          = exhibit.title
-        %td
-          = exhibit.user.nickname
-        %td
-          = exhibit.description
+        %th タイトル
+        %th 出品者
+        %th 説明
+    %tbody
+      - exhibits.each do |exhibit|
+        %tr
+          %td
+            = exhibit.title
+          %td
+            = exhibit.user.nickname
+          %td
+            = exhibit.description
+  - else
+    %p まだ何もありません
