@@ -18,4 +18,5 @@
   .sakes__table.content#sakes
     = render partial: '/exhibits/exhibits_table', locals: {exhibits: @sakes}
 
-= link_to 'トップにもどる', root_path
+= link_to '新しく出品登録する', new_exhibit_path
+= link_to 'みんなの出品物一覧にもどる', root_path

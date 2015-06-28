@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  root 'exhibits#index'
 
   get '/auth/:provider/callback/' => 'user_sessions#create'
   get 'signin' =>  'user_sessions#new'
