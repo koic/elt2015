@@ -17,7 +17,7 @@ class ExhibitsController < ApplicationController
 
     if @exhibit.save
       @exhibit = @exhibit.becomes(Exhibit)
-      redirect_to @exhibit, notice: '登録が完了しました。'
+      redirect_to my_exhibits_path, notice: '登録が完了しました。'
     else
       @exhibits = Exhibit.subclasses.map(&:to_s)
       render :new
