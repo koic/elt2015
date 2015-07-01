@@ -1,0 +1,11 @@
+%h2 投票画面
+
+%p なにに投票する？
+
+= link_to 'LT', new_vote_path, class: 'button round'
+= link_to '食べ物', new_vote_path, class: 'button round'
+= link_to 'お酒', new_vote_path, class: 'button round'
+
+= form_tag :new_vote, method: :get
+= hidden_field_tag :new_vote_lt, 'lt'
+= submit_tag 'LT', class: 'button round'

@@ -10,4 +10,9 @@ Rails.application.routes.draw do
   namespace :my do
     resources :exhibits, only: %i(index)
   end
+
+  get :what_to_vote, to: 'user/votes#what_to_vote'
+  scope module: :user do
+    resources :votes, only: %i(new create)
+  end
 end
