@@ -1,1 +1,7 @@
 %h2 投票する
+
+= form_for @vote do |f|
+  = f.label :exhibit_id
+  = f.text_field :exhibit_id
+
+  = f.submit
