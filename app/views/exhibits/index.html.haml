@@ -9,10 +9,12 @@
 
 .tabs-content
   .content.active#lts
-    = render partial: 'exhibits_table', locals: {exhibits: @lts}
+    = render partial: 'shared/exhibits_table', locals: {exhibits: @lts}
 
   .content#foods
-    = render partial: 'exhibits_table', locals: {exhibits: @foods}
+    = render partial: 'shared/exhibits_table', locals: {exhibits: @foods}
+
+= link_to '投票する', what_to_vote_path, class: 'button radius'
 
 = link_to '出品したいかたはこちら', my_exhibits_path
 = link_to 'サインアウト', signout_path, method: :delete
