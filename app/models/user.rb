@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   has_many :lightning_talks
   has_many :sakes
 
+  has_many :votes
+
   class << self
     def create_with_omniauth(auth)
       create! do |user|
