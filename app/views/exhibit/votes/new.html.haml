@@ -1,1 +1,28 @@
 %h2 投票する
+- if @vote.errors.present?
+  - @vote.errors.full_messages do |message|
+    .alert-box(data-alert)
+      = message
+      %a.close(href='#') &times;
+
+%table
+  %thead
+    %tr
+      %th 投票する
+      %th タイトル
+      %th 出品者
+      %th 説明
+  %tbody
+    = form_for @vote, url: votes_path do |f|
+      - @exhibits.each do |exhibit|
+        %tr
+          %td
+            = f.radio_button :exhibit_id, exhibit.id
+          %td
+            = exhibit.title
+          %td
+            = exhibit.user.nickname
+          %td
+            = exhibit.description
+
+      = f.submit

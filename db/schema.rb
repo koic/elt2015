@@ -45,5 +45,12 @@ ActiveRecord::Schema.define(version: 20150704030951) do
     t.string   "uid",        null: false
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "exhibit_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "exhibits", "users"
 end
