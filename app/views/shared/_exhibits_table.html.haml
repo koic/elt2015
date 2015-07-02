@@ -1,5 +1,5 @@
-%table
-  - if exhibits.any?
+- if exhibits.any?
+  %table
     %thead
       %tr
         %th タイトル
@@ -14,5 +14,5 @@
             = exhibit.user.nickname
           %td
             = exhibit.description
-  - else
-    %p まだ何もありません
+- else
+  %p まだ何もありません
