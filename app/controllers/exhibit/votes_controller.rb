@@ -1,4 +1,4 @@
-class Exhibit::VotesController< ApplicationController
+class Exhibit::VotesController < ApplicationController
   permits :exhibit_id
 
   def new

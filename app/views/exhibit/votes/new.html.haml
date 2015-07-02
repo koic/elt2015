@@ -5,15 +5,15 @@
       = message
       %a.close(href='#') &times;
 
-%table
-  %thead
-    %tr
-      %th 投票する
-      %th タイトル
-      %th 出品者
-      %th 説明
-  %tbody
-    = form_for @vote, url: votes_path do |f|
+= form_for @vote, url: votes_path do |f|
+  %table
+    %thead
+      %tr
+        %th 投票する
+        %th タイトル
+        %th 出品者
+        %th 説明
+    %tbody
       - @exhibits.each do |exhibit|
         %tr
           %td
@@ -25,4 +25,4 @@
           %td
             = exhibit.description
 
-      = f.submit
+  = f.submit
