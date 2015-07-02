@@ -11,7 +11,6 @@ Rails.application.routes.draw do
     resources :exhibits, only: %i(index)
   end
 
-  get :what_to_vote, to: 'exhibit/votes#what_to_vote'
   scope module: :exhibit do
     resources :votes, only: %i(new create)
   end
