@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'exhibits#index'
 
-  get '/auth/:provider/callback/' => 'user_sessions#create'
+  get '/auth/:provider/callback' => 'user_sessions#create'
   get 'signin' =>  'user_sessions#new'
   delete 'signout' => 'user_sessions#destroy'
 
