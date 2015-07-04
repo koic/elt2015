@@ -4,6 +4,5 @@ class My::ExhibitsController < ApplicationController
   def index
     @lts   = current_user.lightning_talks
     @foods = current_user.foods
-    @sakes = current_user.sakes
   end
 end
