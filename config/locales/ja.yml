@@ -3,6 +3,8 @@ ja:
     submit:
       exhibit:
         create: 登録する
+      vote:
+        create: 投票する
   activerecord:
     attributes:
       exhibit:

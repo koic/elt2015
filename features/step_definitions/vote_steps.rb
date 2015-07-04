@@ -8,5 +8,5 @@ end
 end
 
 もし(/^投票するボタンを押す$/) do
-  click_on '登録する'
+  click_on '投票する'
 end
