@@ -1,6 +1,8 @@
 {
   "name":"apuri",
-  "scripts":{},
+  "scripts":{
+    "postdeploy": "FIXTURES='users,exhibits' bundle exec rake db:migrate db:fixtures:load"
+  },
   "env":{
     "LANG":{
       "required":true
