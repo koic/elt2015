@@ -1,0 +1,3 @@
+notify:
+  webhooks:
+    - url: https://idobata.io/hook/circle_ci/384d86f5-7434-454f-bf13-da1658b26134
