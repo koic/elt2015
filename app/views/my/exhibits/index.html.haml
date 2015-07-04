@@ -5,8 +5,6 @@
     = link_to 'LT', '#lts'
   %li.tab-title
     = link_to '食べ物', '#foods'
-  %li.tab-title
-    = link_to 'お酒', '#sakes'
 
 .tabs-content
   .lts__table.content.active#lts
@@ -14,9 +12,6 @@
 
   .foods__table.content#foods
     = render partial: '/exhibits/exhibits_table', locals: {exhibits: @foods}
-
-  .sakes__table.content#sakes
-    = render partial: '/exhibits/exhibits_table', locals: {exhibits: @sakes}
 
 = link_to '新しく出品登録する', new_exhibit_path
 = link_to 'みんなの出品物一覧にもどる', root_path

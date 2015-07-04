@@ -4,7 +4,6 @@ class ExhibitsController < ApplicationController
   def index
     @lts   = LightningTalk.all
     @foods = Food.all
-    @sakes = Sake.all
   end
 
   def new

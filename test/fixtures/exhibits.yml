@@ -1,13 +1,3 @@
-dassai_spark:
-  title: 獺祭スパークリング
-  description: 美味しい上に珍しいお酒。今飲まないと次はないかも！？
-  type: Sake
-  user_id: 1
-wine:
-  title: カベルネ・ソーヴィニヨン
-  description: まあふつうのワインです。
-  type: Sake
-  user_id: 2
 nikujaga:
   title: 肉じゃが
   description: 手間ひまかけてつくりました。
