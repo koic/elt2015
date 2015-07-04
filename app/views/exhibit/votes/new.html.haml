@@ -10,8 +10,6 @@
     = link_to 'LT', '#lts'
   %li.tab-title
     = link_to '食べ物', '#foods'
-  %li.tab-title
-    = link_to 'お酒', '#sakes'
 
 = form_for @vote, url: votes_path do |f|
   .tabs-content
@@ -54,25 +52,5 @@
                 = food.user.nickname
               %td
                 = food.description
-
-    .content#sakes
-      %table
-        %thead
-          %tr
-            %th 投票する
-            %th タイトル
-            %th 出品者
-            %th 説明
-        %tbody
-          - @sakes.each do |sake|
-            %tr
-              %td
-                = f.radio_button :exhibit_id, sake.id
-              %td
-                = sake.title
-              %td
-                = sake.user.nickname
-              %td
-                = sake.description
 
   = f.submit

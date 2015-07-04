@@ -5,7 +5,6 @@ class Exhibit::VotesController < ApplicationController
     @vote = current_user.votes.new
     @foods = Food.all
     @lts = LightningTalk.all
-    @sakes = Sake.all
   end
 
   def create(vote)
@@ -16,7 +15,6 @@ class Exhibit::VotesController < ApplicationController
     else
       @foods = Food.all
       @lts = LightningTalk.all
-      @sakes = Sake.all
       render :new
     end
   end
