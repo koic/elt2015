@@ -2,8 +2,8 @@ class ExhibitsController < ApplicationController
   permits :title, :description, :type
 
   def index
-    @lts   = LightningTalk.all
-    @foods = Food.all
+    @lts   = LightningTalk.all.preload(:user)
+    @foods = Food.all.preload(:user)
   end
 
   def new
