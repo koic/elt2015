@@ -1,0 +1,6 @@
+%h2 あなたの投票一覧
+
+= render partial: 'shared/votes_table', locals: { votes: @votes }
+
+= link_to '投票する', new_vote_path
+= link_to 'みんなの出品物一覧にもどる', root_path
