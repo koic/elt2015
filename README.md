@@ -1,4 +1,4 @@
-# apuri [![Circle CI](https://circleci.com/gh/yucao24hours/apuri/tree/master.svg?style=svg)](https://circleci.com/gh/yucao24hours/apuri/tree/master)
+# elt2015 [![Circle CI](https://circleci.com/gh/yucao24hours/elt2015.svg?style=svg)](https://circleci.com/gh/yucao24hours/elt2015)
 
 ## 動作確認
 
@@ -9,8 +9,8 @@ GitHub アカウントを使ってログインする仕様のため、事前に 
 その後、セットアップします：
 
 ```sh
-$ git clone git@github.com:yucao24hours/apuri.git
-$ cd apuri
+$ git clone git@github.com:yucao24hours/elt2015.git
+$ cd elt2015
 $ bundle install
 $ （必要に応じて cp config/database.yml.sample config/database.yml をして設定する）
 $ bundle exec rake db:setup db:migrate db:fixtures:load
