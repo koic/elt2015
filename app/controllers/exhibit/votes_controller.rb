@@ -3,8 +3,7 @@ class Exhibit::VotesController < ApplicationController
 
   def new
     @vote = current_user.votes.new
-    @foods = Food.all
-    @lts = LightningTalk.all
+    set_exhibits
   end
 
   def create(vote)
@@ -13,9 +12,15 @@ class Exhibit::VotesController < ApplicationController
     if @vote.save
       redirect_to root_path, notice: '投票しました。'
     else
-      @foods = Food.all
-      @lts = LightningTalk.all
+      set_exhibits
       render :new
     end
+  end
+
+  private
+
+  def set_exhibits
+    @foods = Food.all
+    @lts = LightningTalk.all
   end
 end
