@@ -8,10 +8,10 @@
 
 .tabs-content
   .lts__table.content.active#lts
-    = render partial: '/exhibits/exhibits_table', locals: {exhibits: @lts}
+    = render partial: 'shared/exhibits_table', locals: {exhibits: @lts}
 
   .foods__table.content#foods
-    = render partial: '/exhibits/exhibits_table', locals: {exhibits: @foods}
+    = render partial: 'shared/exhibits_table', locals: {exhibits: @foods}
 
 = link_to '新しく出品登録する', new_exhibit_path
 = link_to 'みんなの出品物一覧にもどる', root_path

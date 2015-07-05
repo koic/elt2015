@@ -14,4 +14,14 @@ FactoryGirl.define do
     nickname 'molly'
     uid '333333'
   end
+
+  trait :sherlock do
+    nickname 'sherlock'
+    uid '444444'
+  end
+
+  trait :irene do
+    nickname 'irene'
+    uid '555555'
+  end
 end

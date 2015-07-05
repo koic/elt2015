@@ -10,4 +10,8 @@ Rails.application.routes.draw do
   namespace :my do
     resources :exhibits, only: %i(index)
   end
+
+  scope module: :exhibit do
+    resources :votes, only: %i(new create)
+  end
 end
