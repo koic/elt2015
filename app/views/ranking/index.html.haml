@@ -1,0 +1,16 @@
+%h2 ランキング
+
+%ul.tabs(data-tab)
+  %li.tab-title.active
+    = link_to 'LT', '#lts'
+  %li.tab-title
+    = link_to '食べ物', '#foods'
+
+.tabs-content
+  .content.active#lts
+    - @lts.each do |lt|
+      = link_to lt.title, '#'
+
+  .content#foods
+    - @foods.each do |food|
+      = link_to food.title, '#'

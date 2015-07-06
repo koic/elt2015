@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   scope module: :exhibit do
     resources :votes, only: %i(new create)
   end
+
+  get :ranking, to: 'ranking#index'
 end
