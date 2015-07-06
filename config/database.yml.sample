@@ -23,13 +23,13 @@ default: &default
 
 development:
   <<: *default
-  database: apuri_development
+  database: elt2015_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: apuri
+  #username: elt2015
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test: &test
   <<: *default
-  database: apuri_test
+  database: elt2015_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,9 +80,9 @@ test: &test
 #
 production:
   <<: *default
-  database: apuri_production
-  username: apuri
-  password: <%= ENV['APURI_DATABASE_PASSWORD'] %>
+  database: elt2015_production
+  username: elt2015
+  password: <%= ENV['ELT2015_DATABASE_PASSWORD'] %>
 
 cucumber:
   <<: *test
