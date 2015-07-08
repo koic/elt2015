@@ -13,6 +13,24 @@
     = csrf_meta_tag
 
   %body
+    %nav.top-bar{ 'data-topbar': '', role: 'navigation' }
+      %ul.title-area
+        %li.name
+          %h1
+            %a{ href: '#' } TokyuRubyKaigi09
+        %li.toggle-topbar.menu-icon
+          %a{ href: '#' }
+            %span Menu
+      %section.top-bar-section
+        %ul.left
+          %li.has-dropdown
+            %a{ href: '#' } メニュー
+            %ul.dropdown
+              %li
+                %a{ href: '#' } First link in dropdown
+              %li
+                %a{ href: '#' } Active link in dropdown
+
     - flash.each do |key, message|
       .alert-box(data-alert class=key)
         = message
