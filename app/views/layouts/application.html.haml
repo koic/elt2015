@@ -26,10 +26,9 @@
           %li.has-dropdown
             %a{ href: '#' } メニュー
             %ul.dropdown
-              %li
-                %a{ href: '#' } First link in dropdown
-              %li
-                %a{ href: '#' } Active link in dropdown
+              %li= link_to '出品したいかたはこちら', my_exhibits_path
+              %li= link_to '投票一覧', my_votes_path
+              %li= link_to 'サインアウト', signout_path, method: :delete
 
     - flash.each do |key, message|
       .alert-box(data-alert class=key)
