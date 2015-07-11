@@ -8,9 +8,13 @@
 
 .tabs-content
   .content.active#lts
-    - @lts.each do |lt|
-      = link_to lt.title, '#'
+    - @lts.each.with_index(1) do |lt, rank|
+      = "#{rank}位"
+      = "#{lt.title} by #{lt.user.nickname}"
+      = "#{lt.votes_count}票"
 
   .content#foods
-    - @foods.each do |food|
-      = link_to food.title, '#'
+    - @foods.each.with_index(1) do |food, rank|
+      = "#{rank}位"
+      = "#{food.title} by #{food.user.nickname}"
+      = "#{food.votes_count}票"

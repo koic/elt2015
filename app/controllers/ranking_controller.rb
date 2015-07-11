@@ -1,6 +1,6 @@
 class RankingController < ApplicationController
   def index
-    @foods = Food.all
-    @lts = LightningTalk.all
+    @foods = Food.by_rank
+    @lts = LightningTalk.by_rank
   end
 end
