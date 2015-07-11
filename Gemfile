@@ -20,6 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development do
   gem 'pry-byebug'
+  gem 'bullet'
 
   group :test do
     gem 'factory_girl_rails'

@@ -1,0 +1,21 @@
+- if votes.any?
+  %table
+    %thead
+      %tr
+        %th 種類
+        %th タイトル
+        %th 出品者
+        %th 説明
+    %tbody
+      - votes.each do |vote|
+        %tr
+          %td
+            = vote.exhibit.type
+          %td
+            = vote.exhibit.title
+          %td
+            = vote.exhibit.user.nickname
+          %td
+            = vote.exhibit.description
+- else
+  %p 投票しているものは、まだ何もありません
