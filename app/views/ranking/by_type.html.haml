@@ -1,0 +1,29 @@
+%h2 タイプ別ランキング
+
+%ul.tabs(data-tab)
+  %li.tab-title.active
+    = link_to 'LT', '#lts'
+  %li.tab-title
+    = link_to '食べ物', '#foods'
+
+.tabs-content
+  .content.active#lts
+    .lts-ranking
+      - @lts.each.with_index(1) do |lt, rank|
+        .lts-ranking__rank
+          = "#{rank}位"
+        .lts-ranking__title-and-creator
+          = "#{lt.title} by #{lt.user.nickname}"
+        .lts-ranking__votes-count
+          = "#{lt.votes_count}票"
+
+  .content#foods
+    .foods-ranking
+      - @foods.each.with_index(1) do |food, rank|
+        .foods-ranking__rank
+          = "#{rank}位"
+        .foods-ranking__title-and-creator
+          = "#{food.title} by #{food.user.nickname}"
+        .foods-ranking__votes-count
+          = "#{food.votes_count}票"
+

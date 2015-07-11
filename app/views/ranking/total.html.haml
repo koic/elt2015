@@ -1,0 +1,15 @@
+%h2 総合ランキング
+まだ実装中
+
+%ul.tabs(data-tab)
+  %li.tab-title.active
+    = link_to 'LT', '#lts'
+  %li.tab-title
+    = link_to '食べ物', '#foods'
+
+.tabs-content
+  .content.active#lts
+    .lts-ranking
+
+  .content#foods
+    .foods-ranking
