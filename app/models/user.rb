@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :foods
   has_many :lightning_talks
+  has_many :exhibits
 
   has_many :votes
 
