@@ -20,7 +20,7 @@ class Exhibit::VotesController < ApplicationController
   private
 
   def set_exhibits
-    @foods = Food.all
-    @lts = LightningTalk.all
+    @foods = Food.preload(:user).all
+    @lts = LightningTalk.preload(:user).all
   end
 end
