@@ -16,7 +16,7 @@ class RankingController < ApplicationController
   end
 
   def by_type
-    @foods = Food.by_rank
-    @lts = LightningTalk.by_rank
+    @foods = Food.preload(:user).by_rank
+    @lts = LightningTalk.preload(:user).by_rank
   end
 end
