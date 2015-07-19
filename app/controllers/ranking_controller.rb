@@ -1,4 +1,6 @@
 class RankingController < ApplicationController
+  before_action :basic_authentication
+
   def total
     # 総合優勝 == ◎◎王を決めるためのランキング
     # user.votes は、「その user が投票した票」を表すので、
@@ -18,5 +20,14 @@ class RankingController < ApplicationController
   def by_type
     @foods = Food.preload(:user).by_rank
     @lts = LightningTalk.preload(:user).by_rank
+  end
+
+  private
+
+  def basic_authentication
+    authenticate_or_request_with_http_basic('ranking') do |username, password|
+      # TODO あとでちゃんと外出しする
+      username == 'rank' && password == 'rank'
+    end
   end
 end
