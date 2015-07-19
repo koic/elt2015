@@ -26,8 +26,7 @@ class RankingController < ApplicationController
 
   def basic_authentication
     authenticate_or_request_with_http_basic('ranking') do |username, password|
-      # TODO あとでちゃんと外出しする
-      username == 'rank' && password == 'rank'
+      username == ENV['RANKING_USERNAME'] && password == ENV['RANKING_PASSWORD']
     end
   end
 end
