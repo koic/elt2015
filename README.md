@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/yucao24hours/elt2015.png?label=ready&title=Ready)](https://waffle.io/yucao24hours/elt2015)
 # elt2015 [![Circle CI](https://circleci.com/gh/yucao24hours/elt2015.svg?style=svg)](https://circleci.com/gh/yucao24hours/elt2015)
 
 ## 動作確認
