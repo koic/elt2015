@@ -53,6 +53,10 @@
               %td
                 = food.description
 
+  = f.label :comment
+  コメントを贈りましょう！（任意です。誹謗中傷や批判的な内容はおやめください。）
+  = f.text_field :comment
+
   = f.submit class: 'button round success'
 
 = link_to 'みんなの出品物一覧にもどる', root_path

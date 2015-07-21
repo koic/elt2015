@@ -1,5 +1,5 @@
 class Exhibit::VotesController < ApplicationController
-  permits :exhibit_id
+  permits :exhibit_id, :comment
 
   def new
     @vote = current_user.votes.new
