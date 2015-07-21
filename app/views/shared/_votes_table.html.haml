@@ -6,6 +6,7 @@
         %th タイトル
         %th 出品者
         %th 説明
+        %th あなたがつけたコメント
     %tbody
       - votes.each do |vote|
         %tr
@@ -17,5 +18,7 @@
             = vote.exhibit.user.nickname
           %td
             = vote.exhibit.description
+          %td
+            = vote.comment
 - else
   %p 投票しているものは、まだ何もありません
