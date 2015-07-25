@@ -9,9 +9,9 @@
 
 .tabs-content
   .content.active#lts
-    = render partial: 'shared/exhibits_table', locals: {exhibits: @lts}
+    = render partial: 'table', locals: {exhibits: @lts}
 
   .content#foods
-    = render partial: 'shared/exhibits_table', locals: {exhibits: @foods}
+    = render partial: 'table', locals: {exhibits: @foods}
 
 = link_to '投票する', new_vote_path, class: 'button radius'
