@@ -12,7 +12,8 @@
       %thead
         %tr
           %th 順位
-          %th タイトル by 発表者
+          %th タイトル
+          %th 発表者
           %th 得票数
       %tbody
         - @lts.each.with_index(1) do |lt, rank|
@@ -20,7 +21,9 @@
             %td.lts-ranking__rank
               = "#{rank}位"
             %td.lts-ranking__title-and-creator
-              = "#{lt.title} by #{lt.user.nickname}"
+              = lt.title
+            %td
+              = lt.user.nickname
             %td.lts-ranking__votes-count
               = "#{lt.votes_count}票"
 
@@ -29,7 +32,8 @@
       %thead
         %tr
           %th 順位
-          %th タイトル by 発表者
+          %th タイトル
+          %th 発表者
           %th 得票数
       %tbody
         - @foods.each.with_index(1) do |lt, rank|
@@ -37,6 +41,8 @@
             %td.foods-ranking__rank
               = "#{rank}位"
             %td.foods-ranking__title-and-creator
-              = "#{lt.title} by #{lt.user.nickname}"
+              = lt.title
+            %td
+              = lt.user.nickname
             %td.foods-ranking__votes-count
               = "#{lt.votes_count}票"
