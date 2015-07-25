@@ -1,8 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Exhibit::VotesController, type: :controller do
+  let(:user) { FactoryGirl.create(:user, :sherlock) }
+
   before do
-    controller.stub(:current_user){ FactoryGirl.create(:user, :sherlock) }
+    allow(controller).to receive(:current_user).and_return(user)
   end
 
   describe 'GET #new' do
