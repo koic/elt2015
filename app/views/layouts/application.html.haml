@@ -14,26 +14,32 @@
 
   %body
     = javascript_include_tag 'reflow'
-    %nav.top-bar{ 'data-topbar': '', role: 'navigation' }
-      %ul.title-area
-        %li.name
-          %h1
-            = link_to 'TokyuRubyKaigi09', root_path
-        %li.toggle-topbar.menu-icon
-          %a{ href: '#' }
-            %span Menu
-      %section.top-bar-section
-        %ul.left
-          %li.has-dropdown
-            %a{ href: '#' } メニュー
-            %ul.dropdown
-              %li= link_to '投票', new_vote_path
-              %li= link_to '出品したいかたはこちら', my_exhibits_path
-              %li= link_to '投票一覧', my_votes_path
-              %li= link_to 'サインアウト', signout_path, method: :delete
+    .row
+      .large-12.columns
+        %nav.top-bar{ 'data-topbar': '', role: 'navigation' }
+          %ul.title-area
+            %li.name
+              %h1
+                = link_to 'TokyuRubyKaigi09', root_path
+            %li.toggle-topbar.menu-icon
+              %a{ href: '#' }
+                %span Menu
+          %section.top-bar-section
+            %ul.left
+              %li.has-dropdown
+                %a{ href: '#' } メニュー
+                %ul.dropdown
+                  %li= link_to '投票', new_vote_path
+                  %li= link_to '出品したいかたはこちら', my_exhibits_path
+                  %li= link_to '投票一覧', my_votes_path
+                  %li= link_to 'サインアウト', signout_path, method: :delete
 
-    - flash.each do |key, message|
-      .alert-box(data-alert class=key)
-        = message
-        %a.close(href='#') &times;
-    = yield
+    .row
+      .large-12.columns
+        - flash.each do |key, message|
+          .alert-box(data-alert class=key)
+            = message
+            %a.close(href='#') &times;
+    .row
+      .large-12.columns
+        = yield
