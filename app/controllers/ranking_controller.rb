@@ -2,6 +2,8 @@ class RankingController < ApplicationController
   before_action :basic_authentication
 
   def total
+    # TODO 総合優勝という概念がよくわからないので相談中
+
     # 総合優勝 == ◎◎王を決めるためのランキング
     # user.votes は、「その user が投票した票」を表すので、
     # 「その user が得た票」は、user.exhibits.map(&:vote) とかになるかな？
