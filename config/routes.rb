@@ -15,4 +15,10 @@ Rails.application.routes.draw do
   scope module: :exhibit do
     resources :votes, only: %i(new create)
   end
+
+  namespace :ranking do
+    get :menu
+    get :total
+    get :by_type
+  end
 end

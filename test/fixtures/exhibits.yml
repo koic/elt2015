@@ -3,9 +3,19 @@ nikujaga:
   description: 手間ひまかけてつくりました。
   type: Food
   user_id: 1
+curry:
+  title: カレーライス
+  description: みんな好きそうだから作った
+  type: Food
+  user_id: 1
 pudding:
   title: カスタードプリン
   description: 蒸すのがすごく大変だったので投票してください。
+  type: Food
+  user_id: 2
+applepie:
+  title: アップルパイ
+  description: 生地から手作りです
   type: Food
   user_id: 2
 nice_gem:
@@ -13,8 +23,18 @@ nice_gem:
   description: 自分的ナイスな gem を 10 個厳選しました。
   type: LightningTalk
   user_id: 1
+mvc:
+  title: はじめての MVC
+  description: はじめての MVC
+  type: LightningTalk
+  user_id: 1
 ruby_love:
   title: tokyu の中心で Ruby 愛をさけぶ
   description: 叫びます。
+  type: LightningTalk
+  user_id: 2
+service:
+  title: サービス層について語る
+  description: 語ります。
   type: LightningTalk
   user_id: 2
