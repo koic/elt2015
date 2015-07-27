@@ -1,24 +1,24 @@
 - if votes.any?
-  %table
-    %thead
+  %table.my-votes-table
+    %thead.my-votes-table__header
       %tr
         %th 種類
         %th タイトル
         %th 出品者
         %th 説明
         %th あなたがつけたコメント
-    %tbody
+    %tbody.my-votes-table__body
       - votes.each do |vote|
         %tr
-          %td
+          %td.my-vote__exhibit-type
             = vote.exhibit.type
-          %td
+          %td.my-vote__exhibit-title
             = vote.exhibit.title
-          %td
+          %td.my-vote__exhibitor-nickname
             = vote.exhibit.user.nickname
-          %td
+          %td.my-vote__exhibit-description
             = vote.exhibit.description
-          %td
+          %td.my-vote__comment-for-exhibit
             = vote.comment
 - else
   %p 投票しているものは、まだ何もありません
