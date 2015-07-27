@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20150716035906) do
     t.integer  "exhibit_id",            null: false
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
-    t.string   "comment",               limit: 40
+    t.string   "comment",    limit: 40
   end
 
   add_foreign_key "exhibits", "users"
