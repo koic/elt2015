@@ -10,3 +10,7 @@ end
 もし(/^投票するボタンを押す$/) do
   click_on '投票する'
 end
+
+もし(/^"(.*?)" とコメントする$/) do |comment|
+  fill_in 'コメント', with: comment
+end

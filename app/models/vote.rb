@@ -4,4 +4,5 @@ class Vote < ActiveRecord::Base
 
   validates :user_id, presence: true
   validates :exhibit_id, presence: true, uniqueness: {scope: %i(user_id)}
+  validates :comment, length: {maximum: 40}
 end
