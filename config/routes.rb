@@ -16,9 +16,5 @@ Rails.application.routes.draw do
     resources :votes, only: %i(new create)
   end
 
-  namespace :ranking do
-    get :menu
-    get :total
-    get :by_type
-  end
+  resources :results, only: %i(index show)
 end
