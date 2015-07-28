@@ -23,7 +23,7 @@
             %td.lts-ranking__rank
               = "#{rank}位"
             %td.lts-ranking__title-and-creator
-              = lt.title
+              = link_to lt.title, '#'
             %td
               = lt.user.nickname
             %td.lts-ranking__votes-count
@@ -43,7 +43,7 @@
             %td.foods-ranking__rank
               = "#{rank}位"
             %td.foods-ranking__title-and-creator
-              = lt.title
+              = link_to lt.title, '#'
             %td
               = lt.user.nickname
             %td.foods-ranking__votes-count
