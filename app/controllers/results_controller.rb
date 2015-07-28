@@ -1,5 +1,5 @@
 class ResultsController < ApplicationController
-  before_action :basic_authentication
+  before_action :basic_authentication unless Rails.env == 'test'
 
   def index
     @foods = Food.preload(:user).by_rank
