@@ -2,12 +2,12 @@
 
 -# XXX ださいけどひとまず
 - if @exhibit.user == current_user
-  - @exhibit.votes.each do |vote|
+  - @votes_with_comment.each do |vote|
     %ul.votes__body
       %li.vote__body
         = "#{vote.comment} / by #{vote.user}"
 - else
-  - @exhibit.votes.each do |vote|
+  - @votes_with_comment.each do |vote|
     %ul.votes__body
       %li.vote__body
         = "#{vote.comment}"

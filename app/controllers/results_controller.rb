@@ -8,6 +8,7 @@ class ResultsController < ApplicationController
 
   def show(id)
     @exhibit = Exhibit.find(id)
+    @votes_with_comment = @exhibit.votes.select{|v| v.comment }
   end
 
   private
