@@ -23,7 +23,7 @@
             %td.lts-ranking__rank
               = "#{rank}位"
             %td.lts-ranking__title-and-creator
-              = link_to lt.title, '#'
+              = link_to lt.title, result_path(lt)
             %td
               = lt.user.nickname
             %td.lts-ranking__votes-count
@@ -38,14 +38,14 @@
           %th 発表者
           %th 得票数
       %tbody
-        - @foods.each.with_index(1) do |lt, rank|
+        - @foods.each.with_index(1) do |food, rank|
           %tr
             %td.foods-ranking__rank
               = "#{rank}位"
             %td.foods-ranking__title-and-creator
-              = link_to lt.title, '#'
+              = link_to food.title, result_path(food)
             %td
-              = lt.user.nickname
+              = food.user.nickname
             %td.foods-ranking__votes-count
-              = "#{lt.votes_count}票"
+              = "#{food.votes_count}票"
 

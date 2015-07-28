@@ -6,6 +6,10 @@ class ResultsController < ApplicationController
     @lts = LightningTalk.preload(:user).by_rank
   end
 
+  def show(id)
+    @exhibit = Exhibit.find(id)
+  end
+
   private
 
   def basic_authentication

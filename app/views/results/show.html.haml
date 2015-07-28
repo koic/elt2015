@@ -1,0 +1,4 @@
+%h2 #{@exhibit.title} へのコメント
+
+- @exhibit.votes.each do |vote|
+  = vote.comment
