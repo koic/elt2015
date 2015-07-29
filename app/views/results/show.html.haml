@@ -1,16 +1,31 @@
-%h2 #{@exhibit.title} へのコメント
+%h2 "#{@exhibit.title}" へのコメント
 
--# XXX ださいけどひとまず
-- if @exhibit.user == current_user
-  - @votes_with_comment.each do |vote|
-    %ul.votes__body
-      %li.vote__body
-        = "#{vote.comment} / by #{vote.user}"
+- if @votes_with_comment.any?
+  - if current_user == @exhibit.user
+    %table.votes-table
+      %thead.votes-table__header
+        %tr
+          %th もらったコメント
+          %th コメント主
+      %tbody.votes-table__body
+        - @votes_with_comment.each do |vote|
+          %tr
+            %td.vote__comment
+              = vote.comment
+            %td.vote__voted-user-name
+              = vote.user.nickname
+  - else
+    %table.votes-table
+      %thead.votes-table__header
+        %tr
+          %th もらったコメント
+      %tbody.votes-table__body
+        - @votes_with_comment.each do |vote|
+          %tr
+            %td.vote__comment
+              = vote.comment
 - else
-  - @votes_with_comment.each do |vote|
-    %ul.votes__body
-      %li.vote__body
-        = "#{vote.comment}"
+  %p コメントはありません
 
 .link--return
 = link_to 'ランキングへ戻る', results_path
