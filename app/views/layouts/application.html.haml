@@ -29,9 +29,10 @@
               %li.has-dropdown
                 %a{ href: '#' } メニュー
                 %ul.dropdown
-                  %li= link_to '投票', new_vote_path
-                  %li= link_to '出品したいかたはこちら', my_exhibits_path
-                  %li= link_to '投票一覧', my_votes_path
+                  %li= link_to '投票所', new_vote_path
+                  %li= link_to 'あなたの投票一覧', my_votes_path
+                  %li= link_to '出品所', new_exhibit_path
+                  %li= link_to 'あなたの出品一覧', my_exhibits_path
                   %li= link_to 'サインアウト', signout_path, method: :delete
 
     .row
