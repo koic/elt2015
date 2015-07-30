@@ -1,20 +1,47 @@
 !!! 5
-%html{:lang => 'ja'}
+%html{lang: 'ja'}
   %head
-    %meta{:charset => 'utf-8'}
+    %meta{charset: 'utf-8'}
 
-    %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1.0'}
+    %meta{name: 'viewport', content: 'width=device-width, initial-scale=1.0'}
 
     %title= content_for?(:title) ? yield(:title) : 'elt2015'
 
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'vendor/modernizr'
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track': true
     = csrf_meta_tag
 
   %body
-    - flash.each do |key, message|
-      .alert-box(data-alert class=key)
-        = message
-        %a.close(href='#') &times;
-    = yield
+    = javascript_include_tag 'reflow'
+    .row
+      .large-12.columns
+        %nav.top-bar{ 'data-topbar': '', role: 'navigation' }
+          %ul.title-area
+            %li.name
+              %h1
+                = link_to 'TokyuRubyKaigi09', root_path
+            %li.toggle-topbar.menu-icon
+              %a{ href: '#' }
+                %span Menu
+          - if current_user
+            %section.top-bar-section
+              %ul.left
+                %li.has-dropdown
+                  %a{ href: '#' } メニュー
+                  %ul.dropdown
+                    %li= link_to '投票所', new_vote_path
+                    %li= link_to 'あなたの投票一覧', my_votes_path
+                    %li= link_to '出品所', new_exhibit_path
+                    %li= link_to 'あなたの出品一覧', my_exhibits_path
+                    %li= link_to 'サインアウト', signout_path, method: :delete
+
+    .row
+      .large-12.columns
+        - flash.each do |key, message|
+          .alert-box(data-alert class=key)
+            = message
+            %a.close(href='#') &times;
+    .row
+      .large-12.columns
+        = yield

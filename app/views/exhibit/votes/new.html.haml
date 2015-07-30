@@ -1,4 +1,4 @@
-%h2 投票する
+%h2 投票所
 - if @vote.errors.present?
   - @vote.errors.full_messages.each do |message|
     .alert-box.alert(data-alert)
@@ -14,49 +14,12 @@
 = form_for @vote, url: votes_path do |f|
   .tabs-content
     .content.active#lts
-      %table
-        %thead
-          %tr
-            %th 投票する
-            %th タイトル
-            %th 出品者
-            %th 説明
-        %tbody
-          - @lts.each do |lt|
-            %tr
-              %td
-                = f.radio_button :exhibit_id, lt.id
-              %td
-                = lt.title
-              %td
-                = lt.user.nickname
-              %td
-                = lt.description
-
+      = render partial: 'table', locals: { f: f, exhibits: @lts }
     .content#foods
-      %table
-        %thead
-          %tr
-            %th 投票する
-            %th タイトル
-            %th 出品者
-            %th 説明
-        %tbody
-          - @foods.each do |food|
-            %tr
-              %td
-                = f.radio_button :exhibit_id, food.id
-              %td
-                = food.title
-              %td
-                = food.user.nickname
-              %td
-                = food.description
+      = render partial: 'table', locals: { f: f, exhibits: @foods }
 
   = f.label :comment
   コメントを贈りましょう！（任意です。誹謗中傷や批判的な内容はおやめください。）
   = f.text_field :comment
 
   = f.submit class: 'button round success'
-
-= link_to 'みんなの出品物一覧にもどる', root_path
