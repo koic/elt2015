@@ -1,4 +1,4 @@
-%h2 投票する
+%h2 投票所
 - if @vote.errors.present?
   - @vote.errors.full_messages.each do |message|
     .alert-box.alert(data-alert)
@@ -17,7 +17,7 @@
       %table
         %thead
           %tr
-            %th 投票する
+            %th 投票対象
             %th タイトル
             %th 出品者
             %th 説明
