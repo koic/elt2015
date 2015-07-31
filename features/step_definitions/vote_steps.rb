@@ -14,3 +14,11 @@ end
 もし(/^"(.*?)" とコメントする$/) do |comment|
   fill_in 'コメント', with: comment
 end
+
+前提(/^"(.*?)" に (\d+) 票入っている$/) do |exhibit, votes|
+  voted_exhibit = Exhibit.find_by(title: exhibit)
+
+  votes.to_i.times do |i|
+    voted_exhibit.votes.create!(user_id: i)
+  end
+end
