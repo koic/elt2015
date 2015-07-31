@@ -3,6 +3,7 @@
   create(:food, title: food, user: user)
 end
 
+# XXX ファクトリじゃなくて出品物登録のステップを使う...
 前提(/^料理 "(.*?)" がある$/) do |food|
   create(:food, title: food, user: create(:user, nickname: 'alice'))
 end
