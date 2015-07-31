@@ -7,5 +7,5 @@ end
 end
 
 ならば(/^"(.*?)" へのコメント一覧ページが表示されていること$/) do |exhibit|
-  expect(page).to have_content "#{exhibit} へのコメント"
+  expect(page).to have_content %!"#{exhibit}" へのコメント!
 end
