@@ -10,7 +10,7 @@ class Exhibit::VotesController < ApplicationController
     @vote = current_user.votes.new(vote)
 
     if @vote.save
-      redirect_to root_path, notice: '投票しました。'
+      redirect_to my_votes_path, notice: '投票しました。'
     else
       set_exhibits
       render :new
