@@ -17,9 +17,16 @@ $ bundle exec rake db:setup db:migrate db:fixtures:load
 $ cp config/application.yml.sample config/application.yml
 ```
 
-セットアップが終わったら、config/application.yml に 1. で取得した key と secret を追記してください。
+セットアップが終わったら、config/application.yml に 1. で取得した key と secret をそれぞれ `GITHUB_KEY` と `GITHUB_SECRET` に追記してください。
 
 ```ruby
+# application.yml
 GITHUB_KEY: your key
 GITHUB_SECRET: your secret
+BASIC_AUTH_USERNAME: username # 別途お伝えします
+BASIC_AUTH_PASSWORD: password # 別途お伝えします
+TWITTER_KEY: your_twitter_key
+TWITTER_SECRET: your_twitter_secret
 ```
+
+※ Twitter アカウントを用いたサインインもできるようにしていますが、こちらは例外的なケースのみで使用することにしています。そのため、動作確認が必要であるなどのケースでない限り セットアップは GitHub のほうだけでかまいません。
