@@ -1,7 +1,7 @@
 class UserSessionsController < ApplicationController
   before_action :require_login, only: %i(destroy)
 
-  http_basic_authenticate_with(name: ENV['BASIC_AUTH_USERNAME'], password: ENV['BASIC_ENV_PASSWORD'], only: %i(twitter))
+  http_basic_authenticate_with(name: ENV['BASIC_AUTH_USERNAME'], password: ENV['BASIC_AUTH_PASSWORD'], only: :twitter)
 
   def new
   end
