@@ -1,6 +1,6 @@
 GITHUB_KEY: your_github_key
 GITHUB_SECRET: your_github_secret
-RANKING_USERNAME: your_ranking_username
-RANKING_PASSWORD: your_ranking_password
+BASIC_AUTH_USERNAME: username
+BASIC_AUTH_PASSWORD: password
 TWITTER_KEY: your_twitter_key
 TWITTER_SECRET: your_twitter_secret
