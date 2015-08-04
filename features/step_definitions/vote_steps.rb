@@ -22,3 +22,7 @@ end
     voted_exhibit.votes.create!(user_id: i)
   end
 end
+
+ならば(/^自分の投票一覧ページが表示されていること$/) do
+  expect(current_path).to eq my_votes_path
+end
