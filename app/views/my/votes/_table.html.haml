@@ -20,7 +20,7 @@
           %td.my-vote__exhibit-description
             = vote.exhibit.description
           %td.my-vote__exhibit-image
-            = vote.exhibit.image_url
+            = exhibit_image_tag(vote.exhibit.image_url)
           %td.my-vote__comment-for-exhibit
             = vote.comment
 - else

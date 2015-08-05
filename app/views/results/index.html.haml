@@ -28,7 +28,7 @@
             %td
               = lt.user.nickname
             %td
-              = lt.image_url
+              = exhibit_image_tag(lt.image_url)
             %td.lts-ranking__votes-count
               = "#{lt.votes_count}票"
 
@@ -51,6 +51,6 @@
             %td
               = food.user.nickname
             %td
-              = food.image_url
+              = exhibit_image_tag(food.image_url)
             %td.foods-ranking__votes-count
               = "#{food.votes_count}票"
