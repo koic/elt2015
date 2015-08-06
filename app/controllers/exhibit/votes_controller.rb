@@ -1,15 +1,15 @@
 class Exhibit::VotesController < ApplicationController
-  permits :exhibit_id, :comment
+  permits :exhibit_id, :comment, model_name: 'VoteForm'
 
   def new
-    @vote = current_user.votes.new
+    @form = VoteForm.new(user_id: current_user.id)
     set_exhibits
   end
 
-  def create(vote)
-    @vote = current_user.votes.new(vote)
+  def create(vote_form)
+    @form = VoteForm.new(vote_form.merge(user_id: current_user.id))
 
-    if @vote.save
+    if @form.save
       redirect_to my_votes_path, notice: '投票しました。'
     else
       set_exhibits

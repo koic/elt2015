@@ -5,6 +5,11 @@ ja:
         create: 登録する
       vote:
         create: 投票する
+  activemodel:
+    attributes:
+      vote_form:
+        exhibit_id: 出品物
+        comment: コメント
   activerecord:
     attributes:
       exhibit:
@@ -13,3 +18,6 @@ ja:
         type: 種類
       vote:
         comment: コメント
+  errors:
+    messages:
+      duplicated_vote: "「%{exhibit}」には既に投票済みです。"

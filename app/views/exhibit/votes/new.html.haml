@@ -1,6 +1,6 @@
 %h2 投票所
-- if @vote.errors.present?
-  - @vote.errors.full_messages.each do |message|
+- if @form.errors.present?
+  - @form.errors.full_messages.each do |message|
     .alert-box.alert(data-alert)
       = message
       %a.close(href='#') &times;
@@ -11,7 +11,7 @@
   %li.tab-title
     = link_to '食べ物', '#foods'
 
-= form_for @vote, url: votes_path do |f|
+= form_for @form, url: votes_path do |f|
   .tabs-content
     .content.active#lts
       = render partial: 'table', locals: { f: f, exhibits: @lts }
@@ -22,4 +22,4 @@
   コメントを贈りましょう！（任意です。誹謗中傷や批判的な内容はおやめください。）
   = f.text_field :comment
 
-  = f.submit class: 'button round success'
+  = f.submit '投票する', class: 'button round success'

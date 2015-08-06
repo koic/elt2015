@@ -3,8 +3,8 @@
 end
 
 もし(/^"(.*?)" にチェックを入れる$/) do |exhibit|
-  foo = Exhibit.find_by(title: exhibit)
-  choose "vote_exhibit_id_#{foo.id}"
+  selected_exhibit = Exhibit.find_by(title: exhibit)
+  choose "vote_form_exhibit_id_#{selected_exhibit.id}"
 end
 
 もし(/^投票するボタンを押す$/) do
