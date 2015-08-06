@@ -23,8 +23,8 @@ $ cp config/application.yml.sample config/application.yml
 # application.yml
 GITHUB_KEY: your key
 GITHUB_SECRET: your secret
-BASIC_AUTH_USERNAME: username # 別途お伝えします
-BASIC_AUTH_PASSWORD: password # 別途お伝えします
+BASIC_AUTH_USERNAME: username
+BASIC_AUTH_PASSWORD: password
 TWITTER_KEY: your_twitter_key
 TWITTER_SECRET: your_twitter_secret
 ```
