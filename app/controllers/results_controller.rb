@@ -14,8 +14,8 @@ class ResultsController < ApplicationController
   private
 
   def basic_authentication
-    authenticate_or_request_with_http_basic('ranking') do |username, password|
-      username == ENV['RANKING_USERNAME'] && password == ENV['RANKING_PASSWORD']
+    authenticate_or_request_with_http_basic('result') do |username, password|
+      username == ENV['BASIC_AUTH_USERNAME'] && password == ENV['BASIC_AUTH_PASSWORD']
     end
   end
 end

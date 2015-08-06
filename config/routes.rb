@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'user_sessions#create'
   get 'signin',                   to: 'user_sessions#new'
   delete 'signout',               to: 'user_sessions#destroy'
+  get 'twitter',                  to: 'user_sessions#twitter'
 
   resources :exhibits, only: %i(new create show index)
 

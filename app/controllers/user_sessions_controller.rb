@@ -1,6 +1,8 @@
 class UserSessionsController < ApplicationController
   before_action :require_login, only: %i(destroy)
 
+  http_basic_authenticate_with(name: ENV['BASIC_AUTH_USERNAME'], password: ENV['BASIC_AUTH_PASSWORD'], only: :twitter)
+
   def new
   end
 
@@ -14,5 +16,8 @@ class UserSessionsController < ApplicationController
   def destroy
     reset_session
     redirect_to signin_path, notice: 'サインアウトしました'
+  end
+
+  def twitter
   end
 end
