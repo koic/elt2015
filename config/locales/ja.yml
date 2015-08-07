@@ -21,3 +21,4 @@ ja:
   errors:
     messages:
       duplicated_vote: "「%{exhibit}」には既に投票済みです。"
+      self_vote: "「%{exhibit}」はあなた自身の出品物のため、投票できません。"

@@ -15,6 +15,9 @@ class VoteForm < ApplicationForm
   end
 
   def user_must_not_vote_own_exhibits
+    user = User.find(user_id)
+    exhibit = Exhibit.find(exhibit_id)
+    errors.add(:exhibit_id, :self_vote, exhibit: exhibit.title) if Exhibit.find(exhibit_id).user == user
   end
 
   def persist!
