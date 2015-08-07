@@ -11,7 +11,8 @@ class VoteForm < ApplicationForm
   private
 
   def user_must_vote_only_once_each_exhibit
-    errors.add(:exhibit_id, :duplicated_vote, exhibit: Exhibit.find(exhibit_id).title) if Vote.exists?(user_id: user_id, exhibit_id: exhibit_id)
+    exhibit = Exhibit.find(exhibit_id)
+    errors.add(:exhibit_id, :duplicated_vote, exhibit: exhibit.title) if Vote.exists?(user_id: user_id, exhibit_id: exhibit_id)
   end
 
   def user_must_not_vote_own_exhibits
