@@ -10,7 +10,7 @@
       - exhibits.each do |exhibit|
         %tr
           %td
-            = exhibit.title
+            = link_to exhibit.title, edit_my_exhibit_path(exhibit)
           %td
             = exhibit.user.nickname
           %td

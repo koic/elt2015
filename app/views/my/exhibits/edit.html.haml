@@ -1,0 +1,18 @@
+%h2 #{@exhibit.title}の編集
+- if @exhibit.errors.present?
+  - @exhibit.errors.full_messages.each do |message|
+    .alert-box.alert(data-alert)
+      = message
+      %a.close(href='#') &times;
+
+= form_for @exhibit.becomes(Exhibit), url: my_exhibit_path, method: :put do |f|
+  = f.label :type
+  = f.select :type, @exhibits
+
+  = f.label :title
+  = f.text_field :title
+
+  = f.label :description
+  = f.text_area :description
+
+  = f.submit class: 'button radius'

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :exhibits, only: %i(new create show index)
 
   namespace :my do
-    resources :exhibits, only: %i(index)
+    resources :exhibits, only: %i(index edit update)
     resources :votes,    only: %i(index)
   end
 
