@@ -36,7 +36,33 @@ end
       かつ 登録ボタンを押す
     EOS
   end
+end
 
+もし(/^"(.*?)" のタイトルをクリックする$/) do |exhibit|
+  within '.my-exhibits-table__body' do
+    within '.my-exhibit__title' do
+      click_on exhibit
+    end
+  end
+end
+
+もし(/^以下の内容で更新する:$/) do |table|
+  table.hashes.each do |row|
+    title = row.fetch('タイトル')
+    type = row.fetch('種別')
+    description = row.fetch('説明文', 'これは更新後の説明文です')
+
+    steps <<-EOS
+      もし タイトルに "#{title}" と入力する
+      かつ 説明文に "#{description}" と入力する
+      かつ 種類として "#{type}" を選択する
+    EOS
+    click_on '更新する'
+  end
+end
+
+ならば(/^"(.*?)" の編集画面が表示されていること$/) do |exhibit|
+  expect(page).to have_content "#{exhibit}の編集"
 end
 
 もし(/^デバッグ$/) do
