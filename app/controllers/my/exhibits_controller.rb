@@ -9,7 +9,7 @@ class My::ExhibitsController < ApplicationController
   end
 
   def edit(id)
-    @exhibit = Exhibit.find(id)
+    @exhibit = current_user.exhibits.find(id)
     @exhibits = Exhibit.subclasses.map(&:to_s)
   end
 
