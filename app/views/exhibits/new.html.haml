@@ -7,7 +7,7 @@
 
 = form_for @exhibit.becomes(Exhibit), url: exhibits_path do |f|
   = f.label :type
-  = f.select :type, @exhibits
+  = f.select :type, @exhibit_types
 
   = f.label :title
   （入力は必須です。最大 20 文字入力可能です。）

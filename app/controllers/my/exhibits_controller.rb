@@ -1,6 +1,6 @@
 class My::ExhibitsController < ApplicationController
   permits :id, :title, :description, :type
-  # XXX .all した結果からっぽだとしたら、まあ無駄といえば無駄なんだけど、@exhibits でまとめて view に渡して
+  # XXX .all した結果からっぽだとしたら、まあ無駄といえば無駄なんだけど、@exhibit_types でまとめて view に渡して
   #     view で出し分けるっていう方法でカッコイイやりかたが思いつかないのだよな。。
 
   def index
@@ -10,7 +10,7 @@ class My::ExhibitsController < ApplicationController
 
   def edit(id)
     @exhibit = current_user.exhibits.find(id)
-    @exhibits = Exhibit.subclasses.map(&:to_s)
+    @exhibit_types = Exhibit.subclasses.map(&:to_s)
   end
 
   def update(id, exhibit)
