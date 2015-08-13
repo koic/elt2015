@@ -27,8 +27,10 @@ end
     title = row.fetch('タイトル')
     type = row.fetch('種別')
     description = row.fetch('説明文', 'これは説明文です')
+    user = row.fetch('ユーザ')
 
     steps <<-EOS
+      前提 "#{user}" としてサインインしている
       もし 登録ページを表示する
       かつ タイトルに "#{title}" と入力する
       かつ 説明文に "#{description}" と入力する
