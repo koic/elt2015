@@ -16,6 +16,7 @@ ja:
         title: タイトル
         description: 説明
         type: 種類
+        image_url: 画像URL
       vote:
         comment: コメント
   errors:

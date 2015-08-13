@@ -1,5 +1,5 @@
 class ExhibitsController < ApplicationController
-  permits :title, :description, :type
+  permits :title, :description, :type, :image_url
 
   def index
     @lts   = LightningTalk.preload(:user).all

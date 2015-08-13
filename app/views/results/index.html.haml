@@ -16,6 +16,7 @@
           %th 順位
           %th タイトル
           %th 発表者
+          %th 画像
           %th 得票数
       %tbody
         - @lts.each.with_index(1) do |lt, rank|
@@ -26,6 +27,8 @@
               = link_to lt.title, result_path(lt)
             %td
               = lt.user.nickname
+            %td
+              = exhibit_image_tag(lt.image_url)
             %td.lts-ranking__votes-count
               = "#{lt.votes_count}票"
 
@@ -36,6 +39,7 @@
           %th 順位
           %th タイトル
           %th 発表者
+          %th 画像
           %th 得票数
       %tbody
         - @foods.each.with_index(1) do |food, rank|
@@ -46,6 +50,7 @@
               = link_to food.title, result_path(food)
             %td
               = food.user.nickname
+            %td
+              = exhibit_image_tag(food.image_url)
             %td.foods-ranking__votes-count
               = "#{food.votes_count}票"
-

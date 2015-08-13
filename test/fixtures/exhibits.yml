@@ -3,6 +3,7 @@ nikujaga:
   description: 手間ひまかけてつくりました。
   type: Food
   user_id: 1
+  image_url: http://myds.jp/illustration/japanese_foods/nikujaga/a.jpg
 curry:
   title: カレーライス
   description: みんな好きそうだから作った
