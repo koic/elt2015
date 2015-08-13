@@ -14,7 +14,7 @@ class My::ExhibitsController < ApplicationController
   end
 
   def update(id, exhibit)
-    @exhibit = Exhibit.find(id)
+    @exhibit = current_user.exhibits.find(id)
 
     if @exhibit.update(exhibit.merge(user: current_user))
       redirect_to my_exhibits_path, notice: '更新しました。'
