@@ -16,7 +16,7 @@ class My::ExhibitsController < ApplicationController
   def update(id, exhibit)
     @exhibit = current_user.exhibits.find(id)
 
-    if @exhibit.update(exhibit.merge(user: current_user))
+    if @exhibit.update(exhibit)
       redirect_to my_exhibits_path, notice: '更新しました。'
     else
       render :edit
