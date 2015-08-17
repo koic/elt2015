@@ -1,19 +1,19 @@
 - if exhibits.any?
-  %table
-    %thead
+  %table.my-exhibits-table
+    %thead.my-exhibits-table__header
       %tr
         %th タイトル
         %th 出品者
         %th 説明
         %th 画像
-    %tbody
+    %tbody.my-exhibits-table__body
       - exhibits.each do |exhibit|
         %tr
-          %td
-            = exhibit.title
-          %td
+          %td.my-exhibit__title
+            = link_to exhibit.title, edit_my_exhibit_path(exhibit)
+          %td.my-exhibit__exhibitor-nickname
             = exhibit.user.nickname
-          %td
+          %td.my-exhibit__description
             = exhibit.description
           %td
             = exhibit_image_tag(exhibit.image_url)

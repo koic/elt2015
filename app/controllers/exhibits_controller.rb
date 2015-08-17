@@ -7,7 +7,7 @@ class ExhibitsController < ApplicationController
   end
 
   def new
-    @exhibits = Exhibit.subclasses.map(&:to_s)
+    @exhibit_types = Exhibit.subclasses.map(&:to_s)
     @exhibit  = Exhibit.new
   end
 
@@ -18,7 +18,7 @@ class ExhibitsController < ApplicationController
       @exhibit = @exhibit.becomes(Exhibit)
       redirect_to my_exhibits_path, notice: '登録が完了しました。'
     else
-      @exhibits = Exhibit.subclasses.map(&:to_s)
+      @exhibit_types = Exhibit.subclasses.map(&:to_s)
       render :new
     end
   end
