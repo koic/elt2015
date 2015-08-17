@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150805111227) do
+ActiveRecord::Schema.define(version: 20150810124353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,8 +25,10 @@ ActiveRecord::Schema.define(version: 20150805111227) do
     t.datetime "updated_at",              null: false
     t.integer  "votes_count", default: 0
     t.string   "image_url"
+    t.integer  "position"
   end
 
+  add_index "exhibits", ["position"], name: "index_exhibits_on_position", unique: true, using: :btree
   add_index "exhibits", ["user_id"], name: "index_exhibits_on_user_id", using: :btree
 
   create_table "foods", force: :cascade do |t|
