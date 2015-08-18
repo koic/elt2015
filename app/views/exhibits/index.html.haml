@@ -9,9 +9,49 @@
 
 .tabs-content
   .content.active#lts
-    = render partial: 'table', locals: {exhibits: @lts}
+    - if @lts.any?
+      %table
+        %thead
+          %tr
+            %th タイトル
+            %th 出品者
+            %th 説明
+            %th 画像
+        %tbody
+          - @lts.each do |lt|
+            %tr
+              %td
+                = lt.title
+              %td
+                = lt.user.nickname
+              %td
+                = lt.description
+              %td
+                = exhibit_image_tag(lt.image_url)
+    - else
+      %p まだ何もありません
 
   .content#foods
-    = render partial: 'table', locals: {exhibits: @foods}
+    - if @foods.any?
+      %table
+        %thead
+          %tr
+            %th タイトル
+            %th 出品者
+            %th 説明
+            %th 画像
+        %tbody
+          - @foods.each do |food|
+            %tr
+              %td
+                = food.title
+              %td
+                = food.user.nickname
+              %td
+                = food.description
+              %td
+                = exhibit_image_tag(food.image_url)
+    - else
+      %p まだ何もありません
 
 = link_to '投票所へ', new_vote_path, class: 'button radius'
