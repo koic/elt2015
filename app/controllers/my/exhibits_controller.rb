@@ -24,8 +24,9 @@ class My::ExhibitsController < ApplicationController
   end
 
   def destroy(id)
-    exhibit = Exhibit.find(id)
+    exhibit = current_user.exhibits.find(id)
     exhibit.destroy
+
     redirect_to my_exhibits_path, notice: '削除しました。'
   end
 end
