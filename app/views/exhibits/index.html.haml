@@ -13,6 +13,7 @@
       %table
         %thead
           %tr
+            %th 発表順
             %th タイトル
             %th 出品者
             %th 説明
@@ -20,6 +21,8 @@
         %tbody
           - @lts.each do |lt|
             %tr
+              %td
+                = lt.try(:announce_number)
               %td
                 = lt.title
               %td
