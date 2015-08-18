@@ -17,18 +17,18 @@ ActiveRecord::Schema.define(version: 20150810124353) do
   enable_extension "plpgsql"
 
   create_table "exhibits", force: :cascade do |t|
-    t.string   "title",                   null: false
+    t.string   "title",                       null: false
     t.text     "description"
-    t.string   "type",                    null: false
-    t.integer  "user_id",                 null: false
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.integer  "votes_count", default: 0
+    t.string   "type",                        null: false
+    t.integer  "user_id",                     null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "votes_count",     default: 0
     t.string   "image_url"
-    t.integer  "position"
+    t.integer  "announce_number"
   end
 
-  add_index "exhibits", ["position"], name: "index_exhibits_on_position", unique: true, using: :btree
+  add_index "exhibits", ["announce_number"], name: "index_exhibits_on_announce_number", unique: true, using: :btree
   add_index "exhibits", ["user_id"], name: "index_exhibits_on_user_id", using: :btree
 
   create_table "foods", force: :cascade do |t|

@@ -1,6 +1,6 @@
 class AddOrderToExhibit < ActiveRecord::Migration
   def change
-    add_column :exhibits, :position, :integer
-    add_index  :exhibits, :position, unique: true
+    add_column :exhibits, :announce_number, :integer
+    add_index  :exhibits, :announce_number, unique: true
   end
 end

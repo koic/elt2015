@@ -24,22 +24,22 @@ nice_gem:
   description: 自分的ナイスな gem を 10 個厳選しました。
   type: LightningTalk
   user_id: 1
-  position: 2
+  announce_number: 2
 mvc:
   title: はじめての MVC
   description: はじめての MVC
   type: LightningTalk
   user_id: 1
-  position: 4
+  announce_number: 4
 ruby_love:
   title: tqrk の中心で Ruby 愛をさけぶ
   description: 叫びます。
   type: LightningTalk
   user_id: 2
-  position: 1
+  announce_number: 1
 service:
   title: サービス層について語る
   description: 語ります。
   type: LightningTalk
   user_id: 2
-  position: 3
+  announce_number: 3
