@@ -22,4 +22,11 @@ class My::ExhibitsController < ApplicationController
       render :edit
     end
   end
+
+  def destroy(id)
+    exhibit = current_user.exhibits.find(id)
+    exhibit.destroy
+
+    redirect_to my_exhibits_path, notice: '削除しました。'
+  end
 end

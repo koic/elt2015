@@ -67,6 +67,14 @@ end
   expect(page).to have_content "#{exhibit}の編集"
 end
 
+もし(/^"(.*?)" を削除する$/) do |exhibit|
+  element = all('.my-exhibits-table__body').find{|e| e.first('.my-exhibit__title', text: /\A#{exhibit}/)}
+
+  within element do
+    click_on '削除'
+  end
+end
+
 もし(/^デバッグ$/) do
   binding.pry
 end
