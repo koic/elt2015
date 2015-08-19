@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.2.3'
 
 gem 'rails', '4.2.3'
+gem 'activeadmin', '~> 1.0.0.pre1'
 gem 'action_args'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'foundation-rails'

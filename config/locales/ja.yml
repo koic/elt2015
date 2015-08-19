@@ -19,6 +19,12 @@ ja:
         image_url: 画像URL
       vote:
         comment: コメント
+    models:
+      exhibit: 出品物
+      lightning_talk: LT
+      food: 食べ物
+      user: ユーザ
+      vote: 投票
   errors:
     messages:
       duplicated_vote: "「%{exhibit}」には既に投票済みです。"
