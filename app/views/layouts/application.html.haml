@@ -29,13 +29,19 @@
               %ul.left
                 %li.has-dropdown
                   %a{ href: '#' } メニュー
-                  %ul.dropdown
-                    %li= link_to '投票所', new_vote_path
-                    %li= link_to 'あなたの投票一覧', my_votes_path
-                    %li= link_to '出品所', new_exhibit_path
-                    %li= link_to 'あなたの出品一覧', my_exhibits_path
-                    %li= link_to 'みんなの出品一覧', root_path
-                    %li= link_to 'サインアウト', signout_path, method: :delete
+                  %ul.dropdown.elt-menu
+                    %li.elt-menu__new-vote
+                      = link_to '投票所', new_vote_path
+                    %li.elt-menu__your-votes
+                      = link_to 'あなたの投票一覧', my_votes_path
+                    %li.elt-menu__new-exhibit
+                      = link_to '出品所', new_exhibit_path
+                    %li.elt-menu__your-exhibits
+                      = link_to 'あなたの出品一覧', my_exhibits_path
+                    %li.elt-menu__exhibits
+                      = link_to 'みんなの出品一覧', root_path
+                    %li.elt-menu__sign-out
+                      = link_to 'サインアウト', signout_path, method: :delete
 
     .row
       .large-12.columns

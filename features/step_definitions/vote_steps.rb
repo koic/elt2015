@@ -1,5 +1,7 @@
 もし(/^投票ページを表示する$/) do
-  click_on '投票所へ'
+  within '.elt-menu' do
+    click_on '投票所'
+  end
 end
 
 もし(/^"(.*?)" にチェックを入れる$/) do |exhibit|
