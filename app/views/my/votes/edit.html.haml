@@ -1,0 +1,36 @@
+- exhibit = @vote.exhibit
+
+%h2 「#{exhibit.title}」への投票内容の編集
+- if @vote.errors.present?
+  - @vote.errors.full_messages.each do |message|
+    .alert-box.alert(data-alert)
+      = message
+      %a.close(href='#') &times;
+
+= form_for @vote, url: my_vote_path do |f|
+  %table
+    %thead
+      %tr
+        %th 種類
+        %th タイトル
+        %th 出品者
+        %th 説明
+        %th 画像
+    %tbody
+      %tr
+        %td
+          = exhibit.type
+        %td
+          = exhibit.title
+        %td
+          = exhibit.user.nickname
+        %td
+          = exhibit.description
+        %td
+          = exhibit_image_tag(exhibit.image_url)
+
+  = f.label :comment
+  コメントを贈りましょう！誹謗中傷や批判的な内容はおやめください。（入力は任意です。最大 40 文字入力可能です。）
+  = f.text_field :comment
+
+  = f.submit class: 'button round success'

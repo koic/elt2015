@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   namespace :my do
     resources :exhibits, only: %i(index edit update destroy)
-    resources :votes,    only: %i(index destroy)
+    resources :votes,    only: %i(index edit update destroy)
   end
 
   scope module: :exhibit do

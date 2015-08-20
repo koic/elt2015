@@ -15,7 +15,7 @@
           %td.my-vote__exhibit-type
             = vote.exhibit.type
           %td.my-vote__exhibit-title
-            = vote.exhibit.title
+            = link_to vote.exhibit.title, edit_my_vote_path(vote)
           %td.my-vote__exhibitor-nickname
             = vote.exhibit.user.nickname
           %td.my-vote__exhibit-description
