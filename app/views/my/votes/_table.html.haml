@@ -8,6 +8,7 @@
         %th 説明
         %th 画像
         %th あなたがつけたコメント
+        %th
     %tbody.my-votes-table__body
       - votes.each do |vote|
         %tr
@@ -23,5 +24,7 @@
             = exhibit_image_tag(vote.exhibit.image_url)
           %td.my-vote__comment-for-exhibit
             = vote.comment
+          %td.my-vote__delete
+            = link_to '削除', my_vote_path(vote), method: :delete, data: {confirm: '一度削除すると元に戻せません。よろしいですか？'}
 - else
   %p 投票しているものは、まだ何もありません
