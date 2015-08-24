@@ -21,4 +21,11 @@ class ApplicationController < ActionController::Base
       redirect_to signin_path, alert: 'サインインしてください'
     end
   end
+
+  def basic_authentication_admin
+    authenticate_or_request_with_http_basic('admin') do |username, password|
+      username == ENV['BASIC_AUTH_USERNAME'] && password == ENV['BASIC_AUTH_PASSWORD']
+    end
+  end
+
 end
