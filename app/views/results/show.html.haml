@@ -11,7 +11,7 @@
         - @votes_with_comment.each do |vote|
           %tr
             %td.vote__comment
-              = vote.comment
+              = vote.comment.present? ? vote.comment : '(コメントは入力されていません)'
             %td.vote__voted-user-name
               = vote.user.nickname
   - else
@@ -23,7 +23,7 @@
         - @votes_with_comment.each do |vote|
           %tr
             %td.vote__comment
-              = vote.comment
+              = vote.comment.present? ? vote.comment : '(コメントは入力されていません)'
 - else
   %p コメントはありません
 
