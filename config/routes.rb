@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   end
 
   resources :results, only: %i(index show)
+  resources :voter_nicknames, only: %i(index)
 end
