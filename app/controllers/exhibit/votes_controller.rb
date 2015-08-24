@@ -30,7 +30,7 @@ class Exhibit::VotesController < ApplicationController
 
   def redirect_to_my_votes_when_vote_stopping
     # NOTE: /admin から操作して stop を切り替える想定
-    if VoteSetting.first.try(:stop?)
+    if EltSetting.first.try(:vote_stoped?)
       redirect_to my_votes_path, notice: '投票期間は終了いたしました。発表をお待ちください'
       return
     end
