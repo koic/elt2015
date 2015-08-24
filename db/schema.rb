@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150824170836) do
+ActiveRecord::Schema.define(version: 20150824171237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20150824170836) do
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
   create_table "elt_settings", force: :cascade do |t|
-    t.boolean  "stop",           default: false, null: false
+    t.boolean  "vote_stoped",    default: false, null: false
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.boolean  "results_opened", default: false, null: false
