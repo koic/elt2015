@@ -1,6 +1,6 @@
 - exhibit = @vote.exhibit
 
-%h2 「#{exhibit.title}」への投票内容の編集
+%h2 「#{exhibit.title}」への投票コメントの編集
 - if @vote.errors.present?
   - @vote.errors.full_messages.each do |message|
     .alert-box.alert(data-alert)

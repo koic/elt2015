@@ -25,6 +25,6 @@
           %td.my-vote__comment-for-exhibit
             = vote.comment
           %td.my-vote__delete
-            = link_to '削除', my_vote_path(vote), method: :delete, data: {confirm: '一度削除すると元に戻せません。よろしいですか？'}
+            = link_to 'この投票を削除', my_vote_path(vote), method: :delete, data: {confirm: '一度削除すると元に戻せません。よろしいですか？'}
 - else
   %p 投票しているものは、まだ何もありません
