@@ -25,7 +25,7 @@ class Exhibit::VotesController < ApplicationController
 
   def set_exhibits
     @foods = Food.preload(:user).all
-    @lts = LightningTalk.preload(:user).all
+    @lts = LightningTalk.preload(:user).announce_order.all
   end
 
   def redirect_to_my_votes_when_vote_stopping
