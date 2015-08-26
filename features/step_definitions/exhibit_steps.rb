@@ -64,7 +64,7 @@ end
 end
 
 ならば(/^"(.*?)" の編集画面が表示されていること$/) do |exhibit|
-  expect(page).to have_content "#{exhibit}の編集"
+  expect(page).to have_content "「#{exhibit}」の編集"
 end
 
 もし(/^"(.*?)" を削除する$/) do |exhibit|

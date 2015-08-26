@@ -19,6 +19,6 @@
           %td.my-exhibit__image
             = exhibit_image_tag(exhibit.image_url)
           %td.my-exhibit__delete
-            = link_to '削除', my_exhibit_path(exhibit), method: :delete, data: {confirm: '出品物を削除すると、すでに投票されている票数やコメントも確認できなくなります。よろしいですか？'}
+            = link_to 'この出品物を削除', my_exhibit_path(exhibit), method: :delete, data: {confirm: '出品物を削除すると、すでに投票されている票数やコメントも確認できなくなります。よろしいですか？'}
 - else
   %p まだ何もありません

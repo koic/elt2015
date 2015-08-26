@@ -8,13 +8,14 @@
         %th 説明
         %th 画像
         %th あなたがつけたコメント
+        %th
     %tbody.my-votes-table__body
       - votes.each do |vote|
         %tr
           %td.my-vote__exhibit-type
             = vote.exhibit.type
           %td.my-vote__exhibit-title
-            = vote.exhibit.title
+            = link_to vote.exhibit.title, edit_my_vote_path(vote)
           %td.my-vote__exhibitor-nickname
             = vote.exhibit.user.nickname
           %td.my-vote__exhibit-description
@@ -23,5 +24,7 @@
             = exhibit_image_tag(vote.exhibit.image_url)
           %td.my-vote__comment-for-exhibit
             = vote.comment
+          %td.my-vote__delete
+            = link_to 'この投票を削除', my_vote_path(vote), method: :delete, data: {confirm: '一度削除すると元に戻せません。よろしいですか？'}
 - else
   %p 投票しているものは、まだ何もありません
