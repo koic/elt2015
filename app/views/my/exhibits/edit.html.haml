@@ -6,22 +6,4 @@
       %a.close(href='#') &times;
 
 = form_for @exhibit.becomes(Exhibit), url: my_exhibit_path, method: :put do |f|
-  = f.label :type
-  = f.select :type, @exhibit_types
-
-  = f.label :title
-  （入力は必須です。最大 20 文字入力可能です。）
-  = f.text_field :title
-
-  = f.label :description
-  あなたの作品の魅力を伝える説明文を書いてください。（入力は任意です。最大 40 文字入力可能です。）
-  = f.text_area :description
-
-  -# TODO: food と lt で表示を切り替えたい（foodの時だけ表示したい）
-  -# TODO: lt にはスライドURLを入れられるようにしたい
-  -#       もしくは画像でなければスライドが別タブで開くような実装でもよいかも？
-  = f.label :image_url
-  ※ Food の場合は画像 URL を入れられます。画像は出品物一覧ページで展開されます
-  = f.text_area :image_url
-
-  = f.submit class: 'button radius'
+  = render partial: 'shared/exhibit_form', locals: { f: f, exhibit_types: @exhibit_types }
