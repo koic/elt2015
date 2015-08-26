@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :results_opened?, :vote_stopped?
 
   def results_opened?
-    @result_opened ||= EltSetting.first.try(:results_opened?)
+    @results_opened ||= EltSetting.first.try(:results_opened?)
   end
 
   def vote_stopped?
