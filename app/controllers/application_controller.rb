@@ -4,14 +4,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :require_login
-  helper_method :current_user, :results_opened?, :vote_stoped?
+  helper_method :current_user, :results_opened?, :vote_stopped?
 
   def results_opened?
     @result_opened ||= EltSetting.first.try(:results_opened?)
   end
 
-  def vote_stoped?
-    @vote_stoped ||= EltSetting.first.try(:vote_stoped?)
+  def vote_stopped?
+    @vote_stopped ||= EltSetting.first.try(:vote_stopped?)
   end
 
   private
