@@ -16,7 +16,7 @@
           %th 順位
           %th タイトル
           %th 発表者
-          %th 画像
+          %th スライド
           %th 得票数
       %tbody
         - @lts.each.with_index(1) do |lt, rank|
@@ -28,7 +28,7 @@
             %td
               = lt.user.nickname
             %td
-              = exhibit_image_tag(lt.image_url)
+              = exhibit_slide_tag(lt.slide_url)
             %td.lts-ranking__votes-count
               = "#{lt.votes_count}票"
 

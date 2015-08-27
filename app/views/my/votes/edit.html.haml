@@ -15,7 +15,9 @@
         %th タイトル
         %th 出品者
         %th 説明
-        %th 画像
+        %th
+          -# XXX もっとよい実装を…
+          = exhibit.type == 'Food' ? '画像' : 'スライド'
     %tbody
       %tr
         %td
@@ -27,7 +29,7 @@
         %td
           = exhibit.description
         %td
-          = exhibit_image_tag(exhibit.image_url)
+          = exhibit_image_or_slide_url_tag(exhibit)
 
   = f.label :comment
   コメントを贈りましょう！誹謗中傷や批判的な内容はおやめください。（入力は任意です。最大 40 文字入力可能です。）
