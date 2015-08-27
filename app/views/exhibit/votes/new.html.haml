@@ -14,9 +14,9 @@
 = form_for @form, url: votes_path do |f|
   .tabs-content
     .content.active#lts
-      = render partial: 'table', locals: { f: f, exhibits: @lts }
+      = render partial: 'table', locals: { f: f, exhibits: @lts, url_title: 'スライド' }
     .content#foods
-      = render partial: 'table', locals: { f: f, exhibits: @foods }
+      = render partial: 'table', locals: { f: f, exhibits: @foods, url_title: '画像' }
 
   = f.label :comment
   コメントを贈りましょう！誹謗中傷や批判的な内容はおやめください。（入力は任意です。最大 40 文字入力可能です。）
