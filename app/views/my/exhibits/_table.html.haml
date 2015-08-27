@@ -22,7 +22,7 @@
             = exhibit_image_tag(exhibit.image_url)
           -if results_opened?
             %td.my-exhibit__vote-count
-              = exhibit.votes_count
+              = link_to exhibit.votes_count, result_path(exhibit)
           %td.my-exhibit__delete
             = link_to 'この出品物を削除', my_exhibit_path(exhibit), method: :delete, data: {confirm: '出品物を削除すると、すでに投票されている票数やコメントも確認できなくなります。よろしいですか？'}
 - else
