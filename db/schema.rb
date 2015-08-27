@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20150826132606) do
     t.integer  "votes_count",     default: 0
     t.string   "image_url"
     t.string   "announce_number"
+    t.string   "slide_url"
   end
 
   add_index "exhibits", ["announce_number"], name: "index_exhibits_on_announce_number", unique: true, using: :btree
