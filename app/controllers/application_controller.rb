@@ -21,4 +21,5 @@ class ApplicationController < ActionController::Base
       redirect_to signin_path, alert: 'サインインしてください'
     end
   end
+
 end

@@ -138,7 +138,11 @@ ActiveAdmin.setup do |config|
   # You can add before, after and around filters to all of your
   # Active Admin resources and pages from here.
   #
-  # config.before_filter :do_something_awesome
+  config.before_filter do
+    authenticate_or_request_with_http_basic('admin') do |username, password|
+      username == ENV['BASIC_AUTH_USERNAME'] && password == ENV['BASIC_AUTH_PASSWORD']
+    end
+  end
 
   # == Setting a Favicon
   #
