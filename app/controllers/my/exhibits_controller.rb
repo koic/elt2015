@@ -4,8 +4,8 @@ class My::ExhibitsController < ApplicationController
   #     view で出し分けるっていう方法でカッコイイやりかたが思いつかないのだよな。。
 
   def index
-    @lts   = current_user.lightning_talks.preload(:user)
-    @foods = current_user.foods.preload(:user)
+    @lts   = current_user.lightning_talks
+    @foods = current_user.foods
   end
 
   def edit(id)
