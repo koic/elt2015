@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150826155828) do
+ActiveRecord::Schema.define(version: 20150827000310) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,13 @@ ActiveRecord::Schema.define(version: 20150826155828) do
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
+  create_table "elt_settings", force: :cascade do |t|
+    t.boolean  "vote_stopped",   default: false, null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.boolean  "results_opened", default: false, null: false
+  end
+
   create_table "exhibits", force: :cascade do |t|
     t.string   "title",                       null: false
     t.text     "description"
@@ -41,6 +48,7 @@ ActiveRecord::Schema.define(version: 20150826155828) do
     t.integer  "votes_count",     default: 0
     t.string   "image_url"
     t.string   "announce_number"
+    t.string   "slide_url"
   end
 
   add_index "exhibits", ["announce_number"], name: "index_exhibits_on_announce_number", unique: true, using: :btree
@@ -62,12 +70,6 @@ ActiveRecord::Schema.define(version: 20150826155828) do
     t.datetime "updated_at", null: false
     t.string   "provider",   null: false
     t.string   "uid",        null: false
-  end
-
-  create_table "vote_settings", force: :cascade do |t|
-    t.boolean  "stop",       default: false, null: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
   end
 
   create_table "votes", force: :cascade do |t|
