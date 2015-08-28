@@ -4,7 +4,7 @@ class Exhibit < ActiveRecord::Base
 
   validates :title, presence: true, length: {maximum: 20}
   validates :type,  presence: true
-  validates :description, length: {maximum: 30}
+  validates :description, length: {maximum: 40}
 
   # NOTE ランキングに表示する最低票数 この数値以上の票を集めたもののみ表示する
   RANK_BORDER_NUM = 3.freeze
