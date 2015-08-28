@@ -1,5 +1,5 @@
 class My::ExhibitsController < ApplicationController
-  permits :id, :title, :description, :type
+  permits :id, :title, :description, :type, :slide_url, :image_url
   # XXX .all した結果からっぽだとしたら、まあ無駄といえば無駄なんだけど、@exhibit_types でまとめて view に渡して
   #     view で出し分けるっていう方法でカッコイイやりかたが思いつかないのだよな。。
 

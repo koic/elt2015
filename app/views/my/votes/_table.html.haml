@@ -6,7 +6,8 @@
         %th タイトル
         %th 出品者
         %th 説明
-        %th 画像
+        -# NOTE: Vote はどちらもくるので
+        %th 画像 or スライド
         %th あなたがつけたコメント
         %th
     %tbody.my-votes-table__body
@@ -21,7 +22,7 @@
           %td.my-vote__exhibit-description
             = vote.exhibit.description
           %td.my-vote__exhibit-image
-            = exhibit_image_tag(vote.exhibit.image_url)
+            = exhibit_image_or_slide_url_tag(vote.exhibit)
           %td.my-vote__comment-for-exhibit
             = vote.comment
           %td.my-vote__delete

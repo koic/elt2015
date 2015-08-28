@@ -9,5 +9,6 @@
 種類：
 = @exhibit.type
 
-画像：
-= exhibit_image_tag(@exhibit.image_url)
+- # XXX なんかスマートな書き方を
+= @exhibit.type == 'Food' ? '画像：' : 'スライド：'
+= exhibit_image_or_slide_url_tag(@exhibit)

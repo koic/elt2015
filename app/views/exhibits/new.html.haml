@@ -6,18 +6,4 @@
       %a.close(href='#') &times;
 
 = form_for @exhibit.becomes(Exhibit), url: exhibits_path do |f|
-  = f.label :type
-  = f.select :type, @exhibit_types
-
-  = f.label :title
-  （入力は必須です。最大 20 文字入力可能です。）
-  = f.text_field :title
-
-  = f.label :description
-  あなたの作品の魅力を伝える説明文を書いてください。（入力は任意です。最大 30 文字入力可能です。）
-  = f.text_area :description
-
-  = f.label :image_url
-  = f.text_area :image_url
-
-  = f.submit class: 'button radius'
+  = render partial: 'shared/exhibit_form', locals: { f: f, exhibit_types: @exhibit_types }

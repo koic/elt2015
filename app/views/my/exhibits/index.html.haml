@@ -8,9 +8,9 @@
 
 .tabs-content
   .lts__table.content.active#lts
-    = render partial: 'table', locals: {exhibits: @lts}
+    = render partial: 'table', locals: {exhibits: @lts, url_title: 'スライド'}
 
   .foods__table.content#foods
-    = render partial: 'table', locals: {exhibits: @foods}
+    = render partial: 'table', locals: {exhibits: @foods, url_title: '画像'}
 
 = link_to '出品所へ', new_exhibit_path, class: 'button radius'

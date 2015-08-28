@@ -1,5 +1,6 @@
 class ResultsController < ApplicationController
-  before_action :basic_authentication unless Rails.env == 'test'
+  # NOTE: 結果公開後は basic 認証を外す
+  before_action :basic_authentication, unless: :results_opened? unless Rails.env == 'test'
 
   def index
     @foods = Food.preload(:user).by_rank
@@ -14,9 +15,6 @@ class ResultsController < ApplicationController
   private
 
   def basic_authentication
-    # NOTE: 結果公開後は basic 認証を外す
-    return if results_opened?
-
     authenticate_or_request_with_http_basic('result') do |username, password|
       username == ENV['BASIC_AUTH_USERNAME'] && password == ENV['BASIC_AUTH_PASSWORD']
     end

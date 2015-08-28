@@ -5,7 +5,8 @@
         %th タイトル
         %th 出品者
         %th 説明
-        %th 画像
+        %th
+          = url_title
         -if results_opened?
           %th 得票数
         %th
@@ -18,8 +19,8 @@
             = exhibit.user.nickname
           %td.my-exhibit__description
             = exhibit.description
-          %td.my-exhibit__image
-            = exhibit_image_tag(exhibit.image_url)
+          %td.my-exhibit__url
+            = exhibit_image_or_slide_url_tag(exhibit)
           -if results_opened?
             %td.my-exhibit__vote-count
               = link_to exhibit.votes_count, result_path(exhibit)

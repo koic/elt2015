@@ -17,7 +17,7 @@
             %th タイトル
             %th 出品者
             %th 説明
-            %th 画像
+            %th スライド
         %tbody
           - @lts.each do |lt|
             %tr
@@ -30,7 +30,7 @@
               %td
                 = lt.description
               %td
-                = exhibit_image_tag(lt.image_url)
+                = exhibit_slide_tag(lt.slide_url)
     - else
       %p まだ何もありません
 
